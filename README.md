@@ -58,5 +58,11 @@ Langkah 5-6: calculate() dibungkus try-catch. Bila terjadi error, maka completer
 
 ![1](./images/36.png)
 
+## Praktikum 4
 
+- Soal 7
+
+![1](./images/47.png)
+
+- Soal 8
 
