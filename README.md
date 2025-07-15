@@ -1,16 +1,18 @@
 # books_async
 
-A new Flutter project.
+## Yudi Meiza
 
-## Getting Started
+Project Praktikum Pemrograman Asynchronous Semester 6 | Flutter
 
-This project is a starting point for a Flutter application.
+## Praktikum 1
 
-A few resources to get you started if this is your first Flutter project:
+- Soal 1
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+  ![1](./images/11.png)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Soal 2
+
+  ![1](./images/21.png)
+  Menambahkan fitur async API Google Books.
+
+- Soal 3 
