@@ -23,6 +23,31 @@ Langkah 5 pada kode tersebut menambahkan aksi ke tombol **ElevatedButton** yang 
 
 ![1](./images/13.png)
 
+## Praktikum 2
+
+- Soal 4
+
+Penjelasan Kode Langkah 1 & 2 :
+**Langkah 1:**
+Menambahkan tiga fungsi async (`returnOneAsync`, `returnTwoAsync`, `returnThreeAsync`) yang masing-masing menunggu selama 3 detik sebelum mengembalikan nilai 1, 2, dan 3.
+**Langkah 2:**
+Membuat fungsi `count()` untuk memanggil ketiga fungsi async tadi secara berurutan dan menjumlahkan hasilnya. Total hasil (1 + 2 + 3 = 6) ditampilkan ke UI melalui `setState()`.
+**Langkah 3:**
+Menghubungkan tombol **GO!** dengan fungsi `count()` melalui `onPressed`, agar saat tombol ditekan, proses async dan penjumlahan dijalankan.
+
+**Tujuan:**Melatih penggunaan fungsi asynchronous (`async-await`) secara berurutan dalam Flutter dan menampilkannya ke UI.
+
+![1](./images/24.png)
+
+## Praktikum 3 
+
+- Soal 5
+
+Penjelasan Kode
+
+Kode langkah 2 menggunakan `Completer` untuk menjalankan proses asynchronous secara manual. Fungsi `getNumber()` memanggil `calculate()`, yang menunggu 5 detik lalu menyelesaikan (`complete`) nilai `42`. Nilai ini akan diterima oleh pemanggil `getNumber()` setelah proses selesai.
+
+![1](./images/35.png)
 
 
 
