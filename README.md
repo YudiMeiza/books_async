@@ -66,3 +66,24 @@ Langkah 5-6: calculate() dibungkus try-catch. Bila terjadi error, maka completer
 
 - Soal 8
 
+### Perbedaan antara `FutureGroup` dan `Future.wait`
+
+- **FutureGroup**: Memungkinkan penambahan fungsi asinkron secara dinamis dan menunggu hingga semua fungsi selesai. Cocok untuk situasi di mana jumlah fungsi asinkron tidak diketahui sebelumnya.
+- **Future.wait**: Mengharuskan daftar fungsi asinkron yang sudah ditentukan sebelumnya dan mengembalikan hasilnya sebagai daftar setelah semua fungsi selesai. Lebih sederhana untuk digunakan ketika jumlah fungsi sudah diketahui.
+
+## Praktikum 5
+
+- Soal 9
+
+![1](./images/591.gif)
+
+![1](./images/592.png)
+
+- Soal 10 
+
+### Perbedaan antara `returnError` dan `handleError`
+
+- **returnError**: Fungsi ini hanya mensimulasikan kesalahan dengan melempar exception setelah penundaan. Tidak ada penanganan kesalahan di dalamnya.
+- **handleError**: Fungsi ini menangani kesalahan yang mungkin terjadi saat memanggil `returnError`. Dengan menggunakan blok `try-catch`, fungsi ini dapat menangkap dan mengelola kesalahan, serta memastikan bahwa bagian `finally` selalu dieksekusi.
+
+
