@@ -31,6 +31,43 @@ class FuturePage extends StatefulWidget {
 
 class _FuturePageState extends State<FuturePage> {
   String result = '';
+  bool isLoading = false;
+
+  // 🔽 Method untuk ambil data dari Google Books API
+  Future<http.Response> getData() async {
+    const authority = 'www.googleapis.com';
+    const path = '/books/v1/volumes/_2_uDAAAQBAJ';
+    Uri url = Uri.https(authority, path);
+    return http.get(url);
+  }
+
+  // 🔽 Fungsi untuk memanggil getData dan update UI
+  void fetchBookData() async {
+    setState(() {
+      isLoading = true;
+    });
+
+    try {
+      final response = await getData();
+      if (response.statusCode == 200) {
+        setState(() {
+          result = response.body;
+        });
+      } else {
+        setState(() {
+          result = 'Error: ${response.statusCode}';
+        });
+      }
+    } catch (e) {
+      setState(() {
+        result = 'Exception: $e';
+      });
+    } finally {
+      setState(() {
+        isLoading = false;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -39,21 +76,25 @@ class _FuturePageState extends State<FuturePage> {
         title: const Text('Back from the Future'),
       ),
       body: Center(
-        child: Column(
-          children: [
-            const Spacer(),
-            ElevatedButton(
-              child: const Text('GO!'),
-              onPressed: () {
-                // Tambahkan aksi ketika tombol ditekan di sini
-              },
-            ),
-            const Spacer(),
-            Text(result),
-            const Spacer(),
-            const CircularProgressIndicator(),
-            const Spacer(),
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            children: [
+              const Spacer(),
+              ElevatedButton(
+                onPressed: fetchBookData,
+                child: const Text('GO!'),
+              ),
+              const Spacer(),
+              if (result.isNotEmpty)
+                Expanded(child: SingleChildScrollView(child: Text(result)))
+              else
+                const Text('No data'),
+              const Spacer(),
+              if (isLoading) const CircularProgressIndicator(),
+              const Spacer(),
+            ],
+          ),
         ),
       ),
     );
