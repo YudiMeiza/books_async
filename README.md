@@ -49,5 +49,14 @@ Kode langkah 2 menggunakan `Completer` untuk menjalankan proses asynchronous sec
 
 ![1](./images/35.png)
 
+- Soal 6
+
+Penjelasan Kode
+
+Langkah 2: calculate() hanya menjalankan Future.delayed lalu complete(42) tanpa penanganan kesalahan. Jika terjadi error, program bisa crash.
+Langkah 5-6: calculate() dibungkus try-catch. Bila terjadi error, maka completer.completeError() dipanggil. Lalu di Langkah 6, bagian onPressed() menggunakan .catchError() untuk menangani error dan menampilkan pesan 'An error occurred'.
+
+![1](./images/36.png)
+
 
 
